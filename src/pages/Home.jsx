@@ -59,8 +59,6 @@ const Home = () => {
         localStorage.clear()
         setCategoriesList([{ categoryName: "Home" }]);
         navigate("/Home")
-        //Reload is not the best option but works for now
-        location.reload()
       }
     });
   };
@@ -85,7 +83,7 @@ const Home = () => {
               key={idx}
               path={`/${category.categoryName.replaceAll(" ", "-")}`}
               element={
-                <Dashboard key={idx} categoryName={category.categoryName} />
+                <Dashboard key={idx} categoryName={category.categoryName} categoriesList={categoriesList}/>
               }
             />
           );

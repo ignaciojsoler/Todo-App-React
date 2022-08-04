@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Column from "./Column";
 import nextId from "react-id-generator";
 
-const Dashboard = ({ categoryName }) => {
+const Dashboard = ({ categoryName, categoriesList }) => {
   //States to order the columns by
   const taskState = ["To-Do", "Doing", "Completed"];
 
@@ -86,6 +86,11 @@ const Dashboard = ({ categoryName }) => {
   useEffect(() => {
     localStorage.setItem(categoryName, JSON.stringify(taskCollection));
   }, [taskCollection]);
+
+  useEffect(() => {
+    setTaskCollection(userTaskCollection)
+  }, [categoriesList])
+  
 
   return (
     <div className="ml-6 py-16 min-h-screen sm:ml-96 sm:py-2 max-h-screen overflow-scroll scrollbar-hide">
