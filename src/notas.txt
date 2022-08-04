@@ -1,0 +1,14 @@
+autoFocus 
+
+Estructura:
+- Darshboard
+- Column
+-TaskList
+- SingleTask
+
+
+
+Cada dashboard tiene una lista de tareas y 3 columnas
+hay que filtrar las listas según el timpo de tarea
+
+Hay que mover toda la data de Column a Dashboard
