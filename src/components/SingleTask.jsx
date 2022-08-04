@@ -43,7 +43,7 @@ const SingleTask = ({
             <input
               type="text"
               placeholder="Title..."
-              className="focus:outline-none"
+              className="focus:outline-none w-48"
               autoFocus
               onKeyDown={handleEnter}
               value={newTaskTitle}

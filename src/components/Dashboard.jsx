@@ -93,15 +93,15 @@ const Dashboard = ({ categoryName, categoriesList }) => {
   
 
   return (
-    <div className="ml-6 py-16 min-h-screen sm:ml-96 sm:py-2 max-h-screen overflow-scroll scrollbar-hide">
+    <div className="py-16 min-h-screen sm:ml-96 sm:py-2 max-h-screen overflow-scroll scrollbar-hide">
 
       <div className="relative right-10 mt-5 text-right hidden lg:block">
         <h3 className="font-semibold text-2xl text-primary">To-Do App</h3>
         <h6 className="mt-1 text-xs text-gray">Developed by Ignacio Soler</h6>
       </div>
 
-      <h3 className="mt-8 text-2xl font-semibold">{categoryName}</h3>
-      <div className="mt-8 flex overflow-scroll scrollbar-hide">
+      <h3 className="mt-8 ml-6 text-2xl font-semibold sm:ml-0">{categoryName}</h3>
+      <div className="mt-8 pl-6 flex overflow-scroll scrollbar-hide">
         {taskState.map((state, idx) => {
           let filteredTaskCollection = taskCollection.filter(
             (task) => task.state === state
