@@ -12,13 +12,7 @@ const Dashboard = ({ categoryName, categoriesList }) => {
   let userTaskCollection = JSON.parse(localStorage.getItem(categoryName));
 
   if (!userTaskCollection) {
-    userTaskCollection = [{
-      id: 1,
-      taskTitle: "",
-      taskDescription: "",
-      state: "To-Do",
-      editable: true,
-    }];
+    userTaskCollection = [];
   }
 
   const [taskCollection, setTaskCollection] = useState(userTaskCollection);
