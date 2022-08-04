@@ -87,7 +87,7 @@ const Dashboard = ({ categoryName, categoriesList }) => {
   
 
   return (
-    <div className="py-16 overflow-scroll scrollbar-hide max-h-screen sm:ml-80 sm:pl-8 sm:py-2">
+    <div className="py-16 overflow-scroll scrollbar-hide min-h-screen max-h-screen sm:ml-80 sm:pl-8 sm:py-2">
 
       <div className="relative right-10 mt-5 text-right hidden lg:block">
         <h3 className="font-semibold text-2xl text-primary">To-Do App</h3>
