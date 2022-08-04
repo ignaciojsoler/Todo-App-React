@@ -68,7 +68,7 @@ const Home = () => {
   }, [categoriesList]);
 
   return (
-    <div className=" m-auto max-w-7xl overflow-hidden">
+    <div className=" m-auto max-w-7xl">
       <Categories
         categoriesList={categoriesList}
         addNewCategory={addNewCategory}
