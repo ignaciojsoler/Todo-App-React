@@ -35,7 +35,7 @@ const SingleTask = ({
   };
 
   return (
-    <div className="mt-5 py-5 px-8 w-64 bg-white rounded-2xl shadow-md">
+    <div className="mt-5 py-5 px-8 w-60 bg-white rounded-2xl shadow-md">
       {task.editable ? (
         <>
           <form onSubmit={handleSubmit}>
