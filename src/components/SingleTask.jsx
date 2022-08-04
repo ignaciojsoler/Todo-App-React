@@ -9,7 +9,6 @@ const SingleTask = ({
   setEditableMode,
   deleteTask,
   taskState,
-  changeTaskState,
 }) => {
   const typesOfStates = ["To-Do", "Doing", "Completed"];
 
