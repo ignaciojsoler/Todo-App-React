@@ -101,7 +101,7 @@ const Dashboard = ({ categoryName, categoriesList }) => {
       </div>
 
       <h3 className="mt-8 ml-6 text-2xl font-semibold sm:ml-0">{categoryName}</h3>
-      <div className="mt-8 pl-6 flex overflow-scroll scrollbar-hide">
+      <div className="mt-8 pl-6 flex overflow-scroll scrollbar-hide sm:pl-0">
         {taskState.map((state, idx) => {
           let filteredTaskCollection = taskCollection.filter(
             (task) => task.state === state

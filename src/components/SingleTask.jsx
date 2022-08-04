@@ -58,10 +58,11 @@ const SingleTask = ({
             />
             <div className="flex justify-between">
             <select
-              className=" text-gray"
+              className=" text-gray bg-white rounded-md px-1 hover:text-slate-400"
               defaultValue={taskState}
               onChange={(e) => setNewTaskState(e.target.value)}
             >
+
               {typesOfStates.map((state, idx) => {
                 return (
                   <option className="text-dark text-xs" key={idx} value={state}>
