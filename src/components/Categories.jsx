@@ -31,7 +31,7 @@ const Categories = ({ categoriesList, addNewCategory, deleteAllCategories }) => 
                 <Link
                   key={idx}
                   to={`/todo-app-react/${category.categoryName.replaceAll(' ', '-')}`}
-                  className={`py-5 px-8 font-semibold rounded-2xl ${sampleLocation === "todo-app-react/" + category.categoryName.replaceAll(' ', '-') && ' bg-seccondary text-primary'} hover:text-primary`}
+                  className={`py-5 px-8 font-semibold rounded-2xl ${sampleLocation === "todo-app-react/" + category.categoryName.replaceAll(' ', '-') && ' bg-seccondary text-primary'} hover:text-primary transition-colors duration-150`}
                   onClick={() => setSlideNav(!slideNav)}
                 >
                   {category.categoryName}
