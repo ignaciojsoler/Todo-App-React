@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import CreateNewCategory from "./CreateNewCategory";
 import LogOut from "./LogOut";
 import { Link, useLocation } from "react-router-dom";
@@ -30,8 +30,8 @@ const Categories = ({ categoriesList, addNewCategory, deleteAllCategories }) => 
               return (
                 <Link
                   key={idx}
-                  to={`/${category.categoryName.replaceAll(' ', '-')}`}
-                  className={`py-5 px-8 font-semibold rounded-2xl ${sampleLocation === category.categoryName.replaceAll(' ', '-') && ' bg-seccondary text-primary'} hover:text-primary`}
+                  to={`/todo-app-react/${category.categoryName.replaceAll(' ', '-')}`}
+                  className={`py-5 px-8 font-semibold rounded-2xl ${sampleLocation === "todo-app-react/" + category.categoryName.replaceAll(' ', '-') && ' bg-seccondary text-primary'} hover:text-primary`}
                   onClick={() => setSlideNav(!slideNav)}
                 >
                   {category.categoryName}

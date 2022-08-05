@@ -87,7 +87,7 @@ const Home = () => {
           return (
             <Route
               key={idx}
-              path={`/${category.categoryName.replaceAll(" ", "-")}`}
+              path={`/todo-app-react/${category.categoryName.replaceAll(" ", "-")}`}
               element={
                 <Dashboard key={idx} categoryName={category.categoryName} categoriesList={categoriesList}/>
               }

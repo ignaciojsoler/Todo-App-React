@@ -13,7 +13,7 @@ const CreateNewCategory = ({ addNewCategory }) => {
       );
       setNewCategoryInput("");
       navigate(
-        `/${newCategoryInput
+        `/todo-app-react/${newCategoryInput
           .replaceAll(" ", "-")
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g, "")}`

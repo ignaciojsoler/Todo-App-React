@@ -14,7 +14,7 @@ const MainHero = () => {
                 <img src={heroImg} alt="hero-image" className='m-auto w-auto max-h-52' />
                 </div>
             </div>
-            <Link className='bg-primary text-white text-center text-lg w-full py-6 rounded-full max-w-sm hover:text-purple-700 hover:bg-purple-400 active:bg-purple-700 active:text-white sm:w-52 sm:ml-4' to="/Home">Get started</Link>
+            <Link className='bg-primary text-white text-center text-lg w-full py-6 rounded-full max-w-sm hover:text-purple-700 hover:bg-purple-400 active:bg-purple-700 active:text-white sm:w-52 sm:ml-4' to="/todo-app-react/Home">Get started</Link>
         </div>
     );
 };
