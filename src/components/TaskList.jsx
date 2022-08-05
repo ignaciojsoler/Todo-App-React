@@ -10,7 +10,7 @@ const TaskList = ({
   changeTaskState,
 }) => {
   return (
-    <div className="pb-5">
+    <>
       {taskCollection.map((task, idx) => {
         return (
           <SingleTask
@@ -24,7 +24,7 @@ const TaskList = ({
           />
         );
       })}
-    </div>
+    </>
   );
 };
 
