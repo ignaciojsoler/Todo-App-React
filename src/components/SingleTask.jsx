@@ -43,7 +43,7 @@ const SingleTask = ({
         text: 'Please add a title to the task',
         icon: 'error',
         iconColor: "#AB54DB",
-        confirmButtonText: 'Ok'
+        confirmButtonColor: "#AB54DB",
       })
     }
     
