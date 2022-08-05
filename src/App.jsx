@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import Home from './pages/Home'
 import { useNavigate } from 'react-router'
 import { Routes, Route } from 'react-router'
@@ -7,7 +6,7 @@ import { Routes, Route } from 'react-router'
 
 function App() {
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
 
   // useEffect(() => {

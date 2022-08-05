@@ -60,7 +60,7 @@ const Home = () => {
       if (result.isConfirmed) {
         localStorage.clear()
         setCategoriesList([{ categoryName: "Home" }])
-        navigate('/')
+        navigate('/todo-app-react/')
       }
     });
   };
