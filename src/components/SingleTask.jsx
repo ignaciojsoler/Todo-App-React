@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import handleEnter from "../helpers/handleEnter";
 import { PencilAltIcon, TrashIcon, CheckIcon } from "@heroicons/react/solid";
 import Swal from 'sweetalert2'
+import useOnClickOutside from "../hooks/useOnClickOutside";
 
 const SingleTask = ({
   task,
@@ -12,11 +13,25 @@ const SingleTask = ({
 }) => {
   const typesOfStates = ["To-Do", "Doing", "Completed"];
 
-  const [newTaskTitle, setNewTaskTitle] = useState(task.taskTitle);
-  const [newTaskDescription, setNewTaskDescription] = useState(
-    task.taskDescription
-  );
+  const [newTaskTitle, setNewTaskTitle] = useState(task.taskTitle)
+  const [newTaskDescription, setNewTaskDescription] = useState(task.taskDescription)
   const [newTaskState, setNewTaskState] = useState(taskState)
+
+  // Create a ref that we add to the element for which we want to detect outside clicks
+  const ref = useRef();
+
+  const changeEditableMode = (e) => {
+    if (newTaskTitle.trim() !== "") {
+      handleSubmit(e)
+    } else {
+      deleteTask(task.id)
+    }
+    
+  }
+
+  // Call hook passing in the ref and a function to call on outside click
+  useOnClickOutside(ref, changeEditableMode);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,7 +53,7 @@ const SingleTask = ({
     <div className="mt-5 py-5 px-8 w-60 bg-white rounded-2xl shadow-md">
       {task.editable ? (
         <>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} ref={ref}>
             <input
               type="text"
               placeholder="Title..."
