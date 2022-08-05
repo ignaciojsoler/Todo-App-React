@@ -21,7 +21,7 @@ const SingleTask = ({
   const ref = useRef();
 
   const changeEditableMode = (e) => {
-    if (newTaskTitle.trim() !== "") {
+    if (newTaskTitle.trim() !== "" || newTaskDescription.trim() !== "") {
       handleSubmit(e)
     } else {
       deleteTask(task.id)
@@ -35,15 +35,16 @@ const SingleTask = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (newTaskTitle.trim() !== "") {
+    if (newTaskTitle.trim() !== "" || newTaskDescription.trim() !== "") {
       addNewTask(task.id, newTaskTitle, newTaskDescription, newTaskState);
     } else {
       Swal.fire({
         title: 'Error!',
-        text: 'Please add a title to the task',
+        text: 'Add some text for your new task',
         icon: 'error',
         iconColor: "#AB54DB",
-        confirmButtonColor: "#AB54DB",
+        showConfirmButton: false,
+        timer: 1200
       })
     }
     
