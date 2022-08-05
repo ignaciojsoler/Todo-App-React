@@ -3,7 +3,7 @@ import Categories from "../components/Categories";
 import Dashboard from "../components/Dashboard";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import IndexHero from "../components/IndexHero";
+import MainHero from "../components/MainHero";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -94,7 +94,7 @@ const Home = () => {
             />
           );
         })}
-        <Route path="*" element={<IndexHero/>}/>
+        <Route path="*" element={<MainHero/>}/>
       </Routes>
     </div>
   );
