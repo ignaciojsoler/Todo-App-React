@@ -67,6 +67,7 @@ const SingleTask = ({
               rows="2"
               placeholder="Description..."
               className="mt-2 mb-4 focus:outline-none w-full resize-none"
+              onKeyDown={handleEnter}
               value={newTaskDescription}
               onChange={(e) => setNewTaskDescription(e.target.value)}
             />
