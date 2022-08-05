@@ -3,6 +3,7 @@ import Categories from "../components/Categories";
 import Dashboard from "../components/Dashboard";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import IndexHero from "../components/IndexHero";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -54,14 +55,19 @@ const Home = () => {
       confirmButtonText: "Yes, delete all",
       iconColor: "#AB54DB",
       customClass: { cancelButton: 'swalBtnColor' }
-    }).then((result) => {
+    })
+    .then((result) => {
       if (result.isConfirmed) {
         localStorage.clear()
-        setCategoriesList([{ categoryName: "Home" }]);
-        navigate("/Home")
+        setCategoriesList([{ categoryName: "Home" }])
+        navigate('/')
       }
     });
   };
+
+  // useEffect(() => {
+  //   navigate('/Home')
+  // }, [])
 
   useEffect(() => {
     localStorage.setItem("storedCategories", JSON.stringify(categoriesList));
@@ -74,7 +80,7 @@ const Home = () => {
         addNewCategory={addNewCategory}
         deleteAllCategories={deleteAllCategories}
       />
-
+      
       {/*Create a new Dashboard for each category added */}
       <Routes>
         {categoriesList.map((category, idx) => {
@@ -88,6 +94,7 @@ const Home = () => {
             />
           );
         })}
+        <Route path="*" element={<IndexHero/>}/>
       </Routes>
     </div>
   );

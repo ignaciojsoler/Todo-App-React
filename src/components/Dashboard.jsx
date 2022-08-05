@@ -89,7 +89,7 @@ const Dashboard = ({ categoryName, categoriesList }) => {
   return (
     <div className="py-16 overflow-scroll scrollbar-hide min-h-screen max-h-screen sm:ml-80 sm:pl-8 sm:py-2">
 
-      <div className="relative right-10 mt-5 text-right hidden lg:block">
+      <div className="relative right-10 mt-5 text-right hidden md:block">
         <h3 className="font-semibold text-2xl text-primary">To-Do App</h3>
         <h6 className="mt-1 text-xs text-gray">Developed by Ignacio Soler</h6>
       </div>

@@ -23,8 +23,8 @@ const Categories = ({ categoriesList, addNewCategory, deleteAllCategories }) => 
       <div onClick={() => setSlideNav(!slideNav)} className={`${!slideNav && ' hidden'} fixed h-screen w-full bg-dark z-30 opacity-50 sm:hidden`} />
 
       {/*Shows the categories on UI */}
-      <div className="absolute max-h-screen min-h-screen sm:pt-8">
-        <nav className={`${!slideNav && '-left-full'} fixed h-full w-3/4 px-5 pt-10 pb-6 flex flex-col justify-between bg-white shadow-xl rounded-r-3xl z-50 sm:left-10 sm:w-72 sm:rounded-t-3xl sm:rounded-b-none sm:inline-block`}>
+      <div className="absolute max-h-screen min-h-screen sm:pt-8 lg:h-screen">
+        <nav className={`${!slideNav && '-left-full'} fixed h-full w-3/4 px-5 pt-10 pb-6 flex flex-col justify-between bg-white shadow-xl rounded-r-3xl z-50 sm:left-10 sm:w-72 sm:rounded-t-3xl sm:rounded-b-none sm:inline-block lg:relative lg:h-full`}>
           <div className="flex flex-col h-5/6 overflow-scroll scrollbar-hide">
             {categoriesList.map((category, idx) => {
               return (

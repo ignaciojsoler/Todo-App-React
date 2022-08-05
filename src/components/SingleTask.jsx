@@ -57,7 +57,7 @@ const SingleTask = ({
             />
             <div className="flex justify-between">
             <select
-              className=" text-gray bg-white rounded-md px-1 hover:text-slate-400"
+              className=" text-gray bg-white rounded-md mr-2 hover:text-slate-400"
               defaultValue={taskState}
               onChange={(e) => setNewTaskState(e.target.value)}
             >
@@ -73,7 +73,7 @@ const SingleTask = ({
 
             <div className="flex justify-end space-x-2">
               <button onClick={handleSubmit} className=" p-1">
-                <CheckIcon className="text-successActive h-6 " />
+                <CheckIcon className="text-successActive h-6 hover:text-green-700" />
               </button>
               <button onClick={() => deleteTask(task.id)}>
                 <TrashIcon className="text-danger h-6 hover:text-dangerActive" />
