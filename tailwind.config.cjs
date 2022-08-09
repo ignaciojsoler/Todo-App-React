@@ -4,7 +4,6 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    
     extend: {
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'] 
@@ -23,7 +22,10 @@ module.exports = {
       backgroundImage: {
         'desktop': "url('/src/assets/bg-desktop.jpg')",
         'mobile': "url('/src/assets/bg-mobile.png')"
-      }
+      },
+      minHeight: {
+        'dashboard': "28rem",
+      },
     },
   },
   plugins: [

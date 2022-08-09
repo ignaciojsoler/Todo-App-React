@@ -14,7 +14,7 @@ function App() {
   // }, [])
 
   return (
-    <div className="font-poppins bg-mobile bg-cover bg-fixed sm:bg-desktop sm:bg-opacity-50">
+    <div className="App font-poppins bg-mobile bg-cover bg-fixed sm:bg-desktop sm:bg-opacity-50">
       <Routes>
         <Route path='*' element={<Home />} />
       </Routes>

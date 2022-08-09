@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Column from "./Column";
 import nextId from "react-id-generator";
+import { useDraggable } from "react-use-draggable-scroll";
 
 const Dashboard = ({ categoryName, categoriesList }) => {
+
+  const ref = useRef(); // We will use React useRef hook to reference the wrapping div:
+  const { events } = useDraggable(ref); // Now we pass the reference to the useDraggable hook:
+
   //States to order the columns by
   const taskState = ["To-Do", "Doing", "Completed"];
 
@@ -95,7 +100,7 @@ const Dashboard = ({ categoryName, categoriesList }) => {
       </div>
 
       <h3 className="mt-8 ml-6 text-2xl font-semibold sm:ml-0">{categoryName}</h3>
-      <div className="mt-8 pl-6 flex overflow-scroll scrollbar-hide sm:pl-0">
+      <div className="mt-8 pl-6 flex overflow-x-scroll scrollbar-hide sm:pl-0 min-h-dashboard" {...events} ref={ref} >
         {taskState.map((state, idx) => {
           let filteredTaskCollection = taskCollection.filter(
             (task) => task.state === state
@@ -110,6 +115,7 @@ const Dashboard = ({ categoryName, categoriesList }) => {
               setEditableMode={setEditableMode}
               deleteTask={deleteTask}
               changeTaskState={changeTaskState}
+              className="cursor-grab"
             />
           );
         })}
