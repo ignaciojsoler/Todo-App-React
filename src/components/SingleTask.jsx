@@ -3,6 +3,7 @@ import handleEnter from "../helpers/handleEnter";
 import { PencilAltIcon, TrashIcon, CheckIcon } from "@heroicons/react/solid";
 import Swal from 'sweetalert2'
 import useOnClickOutside from "../hooks/useOnClickOutside";
+import { useSpring, animated } from 'react-spring'
 
 const SingleTask = ({
   task,
@@ -32,6 +33,11 @@ const SingleTask = ({
   // Call hook passing in the ref and a function to call on outside click
   useOnClickOutside(ref, changeEditableMode);
 
+  const taskAnimationProps = useSpring({
+    delay:200,
+    from: {x:-20, opacity:0},
+    to: {x:0, opacity:1}
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,7 +57,7 @@ const SingleTask = ({
   };
 
   return (
-    <div className="mt-5 py-5 px-8 w-60 bg-white rounded-2xl shadow-md">
+    <animated.div style={taskAnimationProps} className="mt-5 py-5 px-8 w-60 bg-white rounded-2xl shadow-md">
       {task.editable ? (
         <>
           <form onSubmit={handleSubmit} ref={ref}>
@@ -117,7 +123,7 @@ const SingleTask = ({
 
         </div>
       )}
-    </div>
+    </animated.div>
   );
 };
 

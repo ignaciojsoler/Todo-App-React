@@ -3,15 +3,20 @@ import CreateNewCategory from "./CreateNewCategory";
 import LogOut from "./LogOut";
 import { Link, useLocation } from "react-router-dom";
 import { MenuIcon } from '@heroicons/react/solid'
+import { useSpring, animated } from 'react-spring'
 
 
 const Categories = ({ categoriesList, addNewCategory, deleteAllCategories }) => {
 
   const [slideNav, setSlideNav] = useState(false)
   const sampleLocation = useLocation().pathname.slice(1)
+  const animationProps = useSpring({
+    from: {x:-100, opacity:0},
+    to: {x:0, opacity:1}
+  })
 
   return (
-    <div className=" relative">
+    <animated.div style={animationProps} className="relative">
       <div className={`${slideNav && 'opacity-0'} fixed z-50  w-full bg-primary h-16 shadow-xl flex items-center transition duration-500 sm:hidden`}>
         <button onClick={() => setSlideNav(!slideNav)}
           className="absolute  my-5 ml-6 sm:hidden">
@@ -47,7 +52,7 @@ const Categories = ({ categoriesList, addNewCategory, deleteAllCategories }) => 
           </div>
         </nav>
       </div>
-    </div>
+    </animated.div>
   );
 };
 

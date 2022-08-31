@@ -4,7 +4,7 @@ import heroImg from '../assets/hero-illustration.png'
 import { useSpring, animated } from 'react-spring'
 
 const MainHero = () => {
-    const imageProps = useSpring({config: { duration: 1000 }, from: { opacity: 0, x:-20 }, to: { opacity: 1, x:0 } })
+    const imageProps = useSpring({config: { duration: 500 }, from: { opacity: 0, x:-20 }, to: { opacity: 1, x:0 } })
 
     return (
         <animated.div className='m-auto h-screen flex flex-col justify-around items-center pt-44 pb-28 px-6 sm:pl-80 sm:justify-center' style={imageProps}>
