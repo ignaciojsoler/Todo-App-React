@@ -12,7 +12,7 @@ const Categories = ({ categoriesList, addNewCategory, deleteAllCategories }) => 
 
   return (
     <div className=" relative">
-      <div className={`${slideNav && 'hidden'} fixed z-50  w-full bg-primary h-16 shadow-xl flex items-center sm:hidden`}>
+      <div className={`${slideNav && 'opacity-0'} fixed z-50  w-full bg-primary h-16 shadow-xl flex items-center transition duration-500 sm:hidden`}>
         <button onClick={() => setSlideNav(!slideNav)}
           className="absolute  my-5 ml-6 sm:hidden">
           <MenuIcon className="h-8 text-seccondary" />
